@@ -10,15 +10,15 @@ public class SelfDesroyer : MonoBehaviour
     private void Start()
     {
         _hightDestroy = 20;
-        _player = GameObject.Find("Player").transform;
+        _player = GameObject.FindObjectOfType<Player>().transform;
     }
 
     private void Update()
     {
-        DestroyYourself();
+        TryDestroyYourself();
     }
 
-    private void DestroyYourself()
+    private void TryDestroyYourself()
     {
         if (gameObject.transform.position.y <= _player.position.y - _hightDestroy)
         {
